@@ -12,6 +12,7 @@
             --danger-red: #e74c3c;
             --paper-bg: rgba(253, 251, 247, 0.94);
             --transition-speed: 0.8s;
+            --school-bg-image: url('./g1g0fmmp1qr31.webp');
         }
 
         body { 
@@ -26,13 +27,43 @@
             background-attachment: fixed;
         }
         
-        /* --- 每個場景專屬的像素背景圖 --- */
-        body.theme-start { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://img.itch.zone/aW1nLzI5Mzg5MjgucG5n/original/E%2BFrvP.png'); } 
-        body.theme-hallway { background-image: url('https://img.itch.zone/aW1nLzI5Mzg5MjcucG5n/original/m9O%2FfB.png'); } 
-        body.theme-dark { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://img.itch.zone/aW1nLzQ4NjU2OTIucG5n/original/hP9kXo.png'); } 
-        body.theme-washroom { background-image: url('https://img.itch.zone/aW1nLzI5Mzg5MjYucG5n/original/2Yl9Kz.png'); } 
-        body.theme-phone { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://img.itch.zone/aW1nLzQ4NjU2OTIucG5n/original/hP9kXo.png'); } 
-        body.theme-office { background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('https://img.itch.zone/aW1nLzI5Mzg5MjcucG5n/original/m9O%2FfB.png'); } 
+        /* --- 每個場景專屬背景：本地像素圖 + 色調疊層 --- */
+        body.theme-start {
+            background-color: #141822;
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                var(--school-bg-image);
+        }
+        body.theme-hallway {
+            background-color: #2f394b;
+            background-image:
+                linear-gradient(to bottom, rgba(16, 24, 36, 0.45), rgba(16, 24, 36, 0.1)),
+                var(--school-bg-image);
+        }
+        body.theme-dark {
+            background-color: #111319;
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
+                var(--school-bg-image);
+        }
+        body.theme-washroom {
+            background-color: #38536a;
+            background-image:
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.18)),
+                var(--school-bg-image);
+        }
+        body.theme-phone {
+            background-color: #0f1015;
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
+                var(--school-bg-image);
+        }
+        body.theme-office {
+            background-color: #4a4f53;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+                var(--school-bg-image);
+        }
 
         #game-box {
             background: var(--paper-bg);
